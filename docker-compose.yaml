@@ -1,0 +1,17 @@
+version: 0.0.1
+name: college-manager-db
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=pg
+      - POSTGRES_DB=devices
+      - POSTGRES_USER=pg
+    ports:
+      - 4000:5432
+    volumes:
+      - vm_devices:/etc/data/postgres
+
+volumes:
+  vm_devices:
